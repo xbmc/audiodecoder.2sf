@@ -555,9 +555,10 @@ int64_t Seek(void* context, int64_t time)
   }
   
   int64_t left = time*tsf->sample_rate*4/1000-tsf->pos;
+  int16_t buf[2048];
   while (left > 4096)
   {
-    state_render(&tsf->emu, NULL, 1024);
+    state_render(&tsf->emu, buf, 1024);
     tsf->pos += 4096;
     left -= 4096;
   }
