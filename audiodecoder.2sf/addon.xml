@@ -9,7 +9,7 @@
   </requires>
   <extension
     point="xbmc.audiodecoder"
-    name="usf"
+    name="2sf"
     extension=".2sf|.mini2sf"
     tags="true"
     library_linux="audiodecoder.2sf.so"/>
