@@ -5,10 +5,10 @@
   name="2SF Audio Decoder"
   provider-name="spiff">
   <requires>
-    <import addon="xbmc.audiodecoder" version="1.0.0"/>
+    <import addon="kodi.audiodecoder" version="1.0.0"/>
   </requires>
   <extension
-    point="xbmc.audiodecoder"
+    point="kodi.audiodecoder"
     name="2sf"
     extension=".2sf|.mini2sf"
     tags="true"

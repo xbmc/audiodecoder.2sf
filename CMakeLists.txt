@@ -6,10 +6,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR})
 
 enable_language(CXX)
 
-find_package(xbmc REQUIRED)
+find_package(kodi REQUIRED)
 find_package(ZLIB REQUIRED)
 
-include_directories(${XBMC_INCLUDE_DIR}
+include_directories(${KODI_INCLUDE_DIR}
                     ${ZLIB_INCLUDE_DIR}
                     ${PROJECT_SOURCE_DIR}/lib/vio2sf/src/vio2sf/desmume
                     ${PROJECT_SOURCE_DIR}/lib/psflib)
