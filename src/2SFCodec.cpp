@@ -515,7 +515,7 @@ void* Init(const char* strFile, unsigned int filecache, int* channels,
   result->emu.arm7_clockdown_level = result->state.arm7_clockdown_level;
   result->emu.arm9_clockdown_level = result->state.arm9_clockdown_level;
 
-  state_setrom(&result->emu, result->state.rom, result->state.rom_size);
+  state_setrom(&result->emu, result->state.rom, result->state.rom_size, 0);
   state_loadstate(&result->emu, result->state.state, result->state.state_size);
   
   *totaltime = result->len;
@@ -552,7 +552,7 @@ int64_t Seek(void* context, int64_t time)
   TSFContext* tsf = (TSFContext*)context;
   if (time*tsf->sample_rate*4/1000 < tsf->pos)
   {
-    state_setrom(&tsf->emu, tsf->state.rom, tsf->state.rom_size);
+    state_setrom(&tsf->emu, tsf->state.rom, tsf->state.rom_size,0);
     state_loadstate(&tsf->emu, tsf->state.state, tsf->state.state_size);
     tsf->pos = 0;
   }
