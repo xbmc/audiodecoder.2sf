@@ -17,7 +17,7 @@
  *
  */
 
-#include "kodi/libXBMC_addon.h"
+#include "libXBMC_addon.h"
 #include "state.h"
 #include "psflib.h"
 #include <iostream>
@@ -27,7 +27,7 @@ extern "C" {
 #include <stdio.h>
 #include <stdint.h>
 
-#include "kodi/kodi_audiodec_dll.h"
+#include "kodi_audiodec_dll.h"
 
 ADDON::CHelper_libXBMC_addon *XBMC           = NULL;
 
