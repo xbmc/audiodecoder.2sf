@@ -12,10 +12,10 @@
     name="2sf"
     extension=".2sf|.mini2sf"
     tags="true"
-    library_linux="audiodecoder.2sf.so"/>
+    library_@PLATFORM@="@LIBRARY_FILENAME@"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">2SF Audio Decoder</summary>
     <description lang="en">2SF Audio Decoder</description>
-    <platform>all</platform>
+    <platform>@PLATFORM@</platform>
   </extension>
 </addon>
