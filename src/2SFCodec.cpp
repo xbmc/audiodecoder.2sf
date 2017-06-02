@@ -528,6 +528,9 @@ int64_t Seek(void* context, int64_t time)
 
 bool DeInit(void* context)
 {
+  if (!context)
+    return true;
+
   TSFContext* tsf = (TSFContext*)context;
   state_deinit(&tsf->emu);
   delete tsf;
