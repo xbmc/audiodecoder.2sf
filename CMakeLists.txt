@@ -9,7 +9,7 @@ enable_language(CXX)
 find_package(Kodi REQUIRED)
 find_package(ZLIB REQUIRED)
 
-include_directories(${KODI_INCLUDE_DIR}
+include_directories(${KODI_INCLUDE_DIR}/.. # Hack way with "/..", need bigger Kodi cmake rework to match right include ways (becomes done in future)
                     ${ZLIB_INCLUDE_DIR}
                     ${PROJECT_SOURCE_DIR}/lib/vio2sf/src/vio2sf/desmume
                     ${PROJECT_SOURCE_DIR}/lib/psflib)
