@@ -7,6 +7,7 @@ cmake_minimum_required(VERSION 2.6)
 
 set(SOURCES src/vio2sf/desmume/armcpu.c
             src/vio2sf/desmume/arm_instructions.c
+            src/vio2sf/desmume/barray.c
             src/vio2sf/desmume/bios.c
             src/vio2sf/desmume/cp15.c
             src/vio2sf/desmume/FIFO.c
