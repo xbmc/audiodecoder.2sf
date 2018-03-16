@@ -22,7 +22,5 @@ set(SOURCES src/vio2sf/desmume/armcpu.c
             src/vio2sf/desmume/thumb_instructions.c
             src/vio2sf/desmume/SPU.cpp)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-
+set(CMAKE_POSITION_INDEPENDENT_CODE 1)
 add_library(vio2sf STATIC ${SOURCES})
