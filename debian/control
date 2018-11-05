@@ -1,0 +1,21 @@
+Source: kodi-audiodecoder-2sf
+Priority: extra
+Maintainer: Arne Morten Kvarving <cptspiff@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), cmake, kodi-addon-dev,
+               libkodiplatform-dev (>= 17.1.0), zlib1g-dev
+Standards-Version: 3.9.6
+Section: libs
+
+Package: kodi-audiodecoder-2sf
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: 2SF audio decoder for Kodi
+  2SF audio decoder for Kodi
+
+Package: kodi-audiodecoder-2sf-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: debug symbols for 2SF audio decoder for Kodi
+  debug symbols for 2SF audio decoder for Kodi
