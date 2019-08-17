@@ -1,9 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
 project(vio2sf)
-
-enable_language(C)
-enable_language(CXX)
-
-cmake_minimum_required(VERSION 2.6)
 
 set(SOURCES src/vio2sf/desmume/armcpu.c
             src/vio2sf/desmume/arm_instructions.c
