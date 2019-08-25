@@ -417,8 +417,7 @@ static int twosf_info(void * context, const char * name, const char * value)
 
 }
 
-class C2SFCodec : public kodi::addon::CInstanceAudioDecoder,
-                  public kodi::addon::CAddonBase
+class ATTRIBUTE_HIDDEN C2SFCodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
   C2SFCodec(KODI_HANDLE instance) :
