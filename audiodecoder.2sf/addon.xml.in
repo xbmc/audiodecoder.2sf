@@ -12,8 +12,11 @@
     tags="true"
     library_@PLATFORM@="@LIBRARY_FILENAME@"/>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">2SF Audio Decoder</summary>
-    <description lang="en">2SF Audio Decoder</description>
+    <summary lang="en">Nintendo DS audio file decoder</summary>
+    <description lang="en">To support game audio file used by some Nintendo DS games.
+
+Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension.
+</description>
     <platform>@PLATFORM@</platform>
   </extension>
 </addon>
