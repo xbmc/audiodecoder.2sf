@@ -20,3 +20,10 @@ set(SOURCES src/vio2sf/desmume/armcpu.c
 
 set(CMAKE_POSITION_INDEPENDENT_CODE 1)
 add_library(vio2sf STATIC ${SOURCES})
+
+include(CheckCXXSymbolExists)
+set(CMAKE_REQUIRED_FLAGS -msse)
+check_cxx_symbol_exists(__SSE__ "" HAS_SSE)
+if(HAS_SSE)
+  target_compile_options(vio2sf PRIVATE -msse)
+endif()
