@@ -3,7 +3,8 @@
 This is a [Kodi](https://kodi.tv) audio decoder addon for 2SF files.
 
 [![Build Status](https://travis-ci.org/xbmc/audiodecoder.2sf.svg?branch=Matrix)](https://travis-ci.org/xbmc/audiodecoder.2sf/branches)
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/xbmc/audiodecoder.2sf?branch=Matrix&svg=true)](https://ci.appveyor.com/project/xbmc/audiodecoder-2sf?branch=Matrix)
+[![Build Status](https://dev.azure.com/alwinus/binary-addons/_apis/build/status/xbmc.audiodecoder.2sf?branchName=Matrix)](https://dev.azure.com/alwinus/binary-addons/_build/latest?definitionId=5&branchName=Matrix)
+<!--- [![Build Status](https://ci.appveyor.com/api/projects/status/github/xbmc/audiodecoder.2sf?branch=Matrix&svg=true)](https://ci.appveyor.com/project/xbmc/audiodecoder-2sf?branch=Matrix) -->
 
 ## Build instructions
 
