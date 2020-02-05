@@ -3,7 +3,8 @@
 This is a [Kodi](http://kodi.tv) audio decoder addon for 2SF files.
 
 [![Build Status](https://travis-ci.org/xbmc/audiodecoder.2sf.svg?branch=master)](https://travis-ci.org/xbmc/audiodecoder.2sf)
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/xbmc/audiodecoder.2sf?svg=true)](https://ci.appveyor.com/project/xbmc/audiodecoder-2sf)
+[![Build Status](https://dev.azure.com/teamkodi/binary-addons/_apis/build/status/xbmc.audiodecoder.2sf?branchName=Leia)](https://dev.azure.com/teamkodi/binary-addons/_build/latest?definitionId=3&branchName=Leia)
+<!--- [![Build Status](https://ci.appveyor.com/api/projects/status/github/xbmc/audiodecoder.2sf?svg=true)](https://ci.appveyor.com/project/xbmc/audiodecoder-2sf) -->
 
 ## Build instructions
 
