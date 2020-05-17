@@ -462,9 +462,6 @@ public:
     state_loadstate(&ctx.emu, ctx.state.state, ctx.state.state_size);
 
     totaltime = ctx.len;
-    static enum AEChannel map[3] = {
-      AE_CH_FL, AE_CH_FR, AE_CH_NULL
-    };
     format = AE_FMT_S16NE;
     channellist = { AE_CH_FL, AE_CH_FR };
     channels = 2;
