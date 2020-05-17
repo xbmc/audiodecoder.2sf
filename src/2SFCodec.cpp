@@ -6,6 +6,7 @@
  *  See LICENSE.md for more information.
  */
 
+#include <algorithm>
 #include <kodi/addon-instance/AudioDecoder.h>
 #include <kodi/Filesystem.h>
 #include "state.h"
@@ -56,10 +57,10 @@ struct TSFContext {
 };
 
 
-static void * psf_file_fopen( const char * uri )
+static void* psf_file_fopen(void* context, const char* path)
 {
   kodi::vfs::CFile* file = new kodi::vfs::CFile;
-  if (!file->OpenFile(uri, 0))
+  if (!file->OpenFile(path, 0))
   {
     delete file;
     return nullptr;
@@ -94,6 +95,7 @@ static long psf_file_ftell( void * handle )
 const psf_file_callbacks psf_file_system =
 {
   "\\/",
+  nullptr,
   psf_file_fopen,
   psf_file_fread,
   psf_file_fseek,
@@ -404,7 +406,18 @@ static int twosf_info(void * context, const char * name, const char * value)
   return 0;
 }
 
+static void sf_status(void* context, const char* message)
+{
+  if (message == nullptr || strlen(message) <= 1)
+    return;
+
+  std::string msg = message;
+  std::replace(msg.begin(), msg.end(), '\n', '\0');
+
+  kodi::Log(ADDON_LOG_DEBUG, "psf status: %s", msg.c_str());
 }
+
+} /* extern "C" */
 
 class ATTRIBUTE_HIDDEN C2SFCodec : public kodi::addon::CInstanceAudioDecoder
 {
@@ -425,12 +438,16 @@ public:
             std::vector<AEChannel>& channellist) override
   {
     ctx.pos = 0;
-    if (psf_load(filename.c_str(), &psf_file_system, 0x24, 0,
-                 0, psf_info_meta, &ctx, 0) <= 0)
+    if (psf_load(filename.c_str(), &psf_file_system, 0x24,
+                 nullptr, nullptr,
+                 psf_info_meta, &ctx, 0,
+                 sf_status, nullptr) <= 0)
       return false;
 
     if (psf_load(filename.c_str(), &psf_file_system, 0x24,
-                 twosf_loader, &ctx.state, twosf_info, &ctx.state, 1) < 0)
+                 twosf_loader, &ctx.state,
+                 twosf_info, &ctx.state, 1,
+                 sf_status, nullptr) < 0)
       return false;
 
     ctx.inited = true;
@@ -498,7 +515,10 @@ public:
   {
     TSFContext tsf;
 
-    if (psf_load(file.c_str(), &psf_file_system, 0x24, 0, 0, psf_info_meta, &tsf, 0) <= 0)
+    if (psf_load(file.c_str(), &psf_file_system, 0x24,
+                 nullptr, nullptr,
+                 psf_info_meta, &tsf, 0,
+                 sf_status, nullptr) <= 0)
     {
       return false;
     }
