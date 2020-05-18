@@ -1,23 +1,12 @@
 /*
- *      Copyright (C) 2014-2020 Arne Morten Kvarving
- *      Copyright (C) 2016-2020 Team Kodi
+ *  Copyright (C) 2014-2020 Arne Morten Kvarving
+ *  Copyright (C) 2016-2020 Team Kodi (https://kodi.tv)
  *
- *  This Program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2, or (at your option)
- *  any later version.
- *
- *  This Program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with Kodi; see the file COPYING.  If not, see
- *  <http://www.gnu.org/licenses/>.
- *
+ *  SPDX-License-Identifier: GPL-2.0-or-later
+ *  See LICENSE.md for more information.
  */
 
+#include <algorithm>
 #include <kodi/addon-instance/AudioDecoder.h>
 #include <kodi/Filesystem.h>
 #include "state.h"
@@ -68,10 +57,10 @@ struct TSFContext {
 };
 
 
-static void * psf_file_fopen( const char * uri )
+static void* psf_file_fopen(void* context, const char* path)
 {
   kodi::vfs::CFile* file = new kodi::vfs::CFile;
-  if (!file->OpenFile(uri, 0))
+  if (!file->OpenFile(path, 0))
   {
     delete file;
     return nullptr;
@@ -106,6 +95,7 @@ static long psf_file_ftell( void * handle )
 const psf_file_callbacks psf_file_system =
 {
   "\\/",
+  nullptr,
   psf_file_fopen,
   psf_file_fread,
   psf_file_fseek,
@@ -416,13 +406,24 @@ static int twosf_info(void * context, const char * name, const char * value)
   return 0;
 }
 
+static void sf_status(void* context, const char* message)
+{
+  if (message == nullptr || strlen(message) <= 1)
+    return;
+
+  std::string msg = message;
+  std::replace(msg.begin(), msg.end(), '\n', '\0');
+
+  kodi::Log(ADDON_LOG_DEBUG, "psf status: %s", msg.c_str());
 }
+
+} /* extern "C" */
 
 class ATTRIBUTE_HIDDEN C2SFCodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
-  C2SFCodec(KODI_HANDLE instance) :
-    CInstanceAudioDecoder(instance) { }
+  C2SFCodec(KODI_HANDLE instance, const std::string& version) :
+    CInstanceAudioDecoder(instance, version) { }
 
   virtual ~C2SFCodec()
   {
@@ -437,12 +438,16 @@ public:
             std::vector<AEChannel>& channellist) override
   {
     ctx.pos = 0;
-    if (psf_load(filename.c_str(), &psf_file_system, 0x24, 0,
-                 0, psf_info_meta, &ctx, 0) <= 0)
+    if (psf_load(filename.c_str(), &psf_file_system, 0x24,
+                 nullptr, nullptr,
+                 psf_info_meta, &ctx, 0,
+                 sf_status, nullptr) <= 0)
       return false;
 
     if (psf_load(filename.c_str(), &psf_file_system, 0x24,
-                 twosf_loader, &ctx.state, twosf_info, &ctx.state, 1) < 0)
+                 twosf_loader, &ctx.state,
+                 twosf_info, &ctx.state, 1,
+                 sf_status, nullptr) < 0)
       return false;
 
     ctx.inited = true;
@@ -457,9 +462,6 @@ public:
     state_loadstate(&ctx.emu, ctx.state.state, ctx.state.state_size);
 
     totaltime = ctx.len;
-    static enum AEChannel map[3] = {
-      AE_CH_FL, AE_CH_FR, AE_CH_NULL
-    };
     format = AE_FMT_S16NE;
     channellist = { AE_CH_FL, AE_CH_FR };
     channels = 2;
@@ -510,7 +512,10 @@ public:
   {
     TSFContext tsf;
 
-    if (psf_load(file.c_str(), &psf_file_system, 0x24, 0, 0, psf_info_meta, &tsf, 0) <= 0)
+    if (psf_load(file.c_str(), &psf_file_system, 0x24,
+                 nullptr, nullptr,
+                 psf_info_meta, &tsf, 0,
+                 sf_status, nullptr) <= 0)
     {
       return false;
     }
@@ -531,9 +536,9 @@ class ATTRIBUTE_HIDDEN CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;
-  ADDON_STATUS CreateInstance(int instanceType, std::string instanceID, KODI_HANDLE instance, KODI_HANDLE& addonInstance) override
+  ADDON_STATUS CreateInstance(int instanceType, const std::string& instanceID, KODI_HANDLE instance, const std::string& version, KODI_HANDLE& addonInstance) override
   {
-    addonInstance = new C2SFCodec(instance);
+    addonInstance = new C2SFCodec(instance, version);
     return ADDON_STATUS_OK;
   }
   virtual ~CMyAddon() = default;
