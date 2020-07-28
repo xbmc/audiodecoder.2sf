@@ -53,6 +53,10 @@ struct TSFContext {
   int64_t pos;
   std::string title;
   std::string artist;
+  std::string game;
+  std::string copyright;
+  std::string year;
+  std::string comment;
   bool inited = false;
 };
 
@@ -189,6 +193,14 @@ static int psf_info_meta(void* context,
     tsf->title = value;
   if (!strcasecmp(name, "artist"))
     tsf->artist = value;
+  if (!strcasecmp(name, "copyright"))
+    tsf->copyright = value;
+  if (!strcasecmp(name, "year"))
+    tsf->year = value;
+  if (!strcasecmp(name, "comment"))
+    tsf->comment = value;
+  if (!strcasecmp(name, "game"))
+    tsf->game = value;
 
   return 0;
 }
@@ -434,8 +446,8 @@ public:
   bool Init(const std::string& filename, unsigned int filecache,
             int& channels, int& samplerate,
             int& bitspersample, int64_t& totaltime,
-            int& bitrate, AEDataFormat& format,
-            std::vector<AEChannel>& channellist) override
+            int& bitrate, AudioEngineDataFormat& format,
+            std::vector<AudioEngineChannel>& channellist) override
   {
     ctx.pos = 0;
     if (psf_load(filename.c_str(), &psf_file_system, 0x24,
@@ -462,8 +474,8 @@ public:
     state_loadstate(&ctx.emu, ctx.state.state, ctx.state.state_size);
 
     totaltime = ctx.len;
-    format = AE_FMT_S16NE;
-    channellist = { AE_CH_FL, AE_CH_FR };
+    format = AUDIOENGINE_FMT_S16NE;
+    channellist = { AUDIOENGINE_CH_FL, AUDIOENGINE_CH_FR };
     channels = 2;
 
     bitspersample = 16;
@@ -507,8 +519,7 @@ public:
     return ctx.pos/(ctx.sample_rate*4)*1000;
   }
 
-  bool ReadTag(const std::string& file, std::string& title,
-               std::string& artist, int& length) override
+  bool ReadTag(const std::string& file, kodi::addon::AudioDecoderInfoTag& tag) override
   {
     TSFContext tsf;
 
@@ -520,9 +531,17 @@ public:
       return false;
     }
 
-    title = tsf.title;
-    artist = tsf.artist;
-    length = tsf.len/1000;
+    tag.SetTitle(tsf.title);
+    if (!tsf.artist.empty())
+      tag.SetArtist(tsf.artist);
+    else
+      tag.SetArtist(tsf.game);
+    tag.SetAlbum(tsf.game);
+    tag.SetReleaseDate(tsf.year);
+    tag.SetComment(tsf.comment);
+    tag.SetDuration(tsf.len/1000);
+    tag.SetSamplerate(tsf.sample_rate);
+    tag.SetChannels(2);
 
     return true;
   }
