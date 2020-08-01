@@ -6,10 +6,12 @@
  *  See LICENSE.md for more information.
  */
 
+#include "CircularBuffer.h"
 #include "psflib.h"
 #include "state.h"
 
 #include <kodi/addon-instance/AudioDecoder.h>
+#include <math.h>
 
 struct twosf_loader_state
 {
@@ -25,8 +27,8 @@ struct twosf_loader_state
   int arm7_clockdown_level;
 
   twosf_loader_state()
-    : rom(0),
-      state(0),
+    : rom(nullptr),
+      state(nullptr),
       rom_size(0),
       state_size(0),
       initial_frames(-1),
@@ -46,18 +48,18 @@ struct twosf_loader_state
 
 struct TSFContext
 {
-  twosf_loader_state state;
-  NDS_state emu;
-  int64_t len;
-  int sample_rate;
-  int64_t pos;
   std::string title;
   std::string artist;
   std::string game;
   std::string copyright;
   std::string year;
   std::string comment;
-  bool inited = false;
+  std::string replaygain;
+
+  bool utf8 = false;
+
+  int tagSongMs = 0;
+  int tagFadeMs = 0;
 };
 
 class ATTRIBUTE_HIDDEN C2SFCodec : public kodi::addon::CInstanceAudioDecoder
@@ -81,5 +83,59 @@ public:
   bool ReadTag(const std::string& file, kodi::addon::AudioDecoderInfoTag& tag) override;
 
 private:
-  TSFContext ctx;
+  bool Load();
+  void Shutdown();
+
+  inline uint64_t time_to_samples(double p_time, uint32_t p_sample_rate)
+  {
+    return (uint64_t)floor((double)p_sample_rate * p_time + 0.5);
+  }
+
+  inline void calcfade()
+  {
+    m_songLength = mul_div(m_tagSongMs - m_posDelta, m_cfgDefaultSampleRate, 1000);
+    m_fadeLength = mul_div(m_tagFadeMs, m_cfgDefaultSampleRate, 1000);
+  }
+
+  inline int mul_div(int number, int numerator, int denominator)
+  {
+    long long ret = number;
+    ret *= numerator;
+    ret /= denominator;
+    return (int)ret;
+  }
+
+  circular_buffer<int16_t> m_silenceTestBuffer = 0;
+
+  twosf_loader_state m_state;
+  NDS_state* m_emu = nullptr;
+
+  std::string m_path;
+
+  int m_cfgDefaultSampleRate = 44100;
+  int m_cfgDefaultInfinite = 0;
+  int m_cfgDefaultLength = 170000;
+  int m_cfgDefaultFade = 10000;
+  bool m_cfgSuppressOpeningSilence = true;
+  bool m_cfgSuppressEndSilence = true;
+  int m_cfgEndSilenceSeconds = 5;
+  int m_cfgResamplingQuality = 4;
+
+  bool m_noLoop = true;
+  bool m_eof;
+
+  std::vector<int16_t> m_sampleBuffer;
+
+  int m_dataWritten;
+  int m_remainder;
+  int m_posDelta;
+  int m_startSilence;
+  int m_silence;
+
+  double m_twosfEmuPosition;
+
+  int m_songLength;
+  int m_fadeLength;
+  int m_tagSongMs;
+  int m_tagFadeMs;
 };
