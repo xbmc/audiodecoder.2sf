@@ -16,6 +16,9 @@ add_subdirectory(lib/psflib)
 
 set(2SF_SOURCES src/2SFCodec.cpp)
 
+set(2SF_HEADERS src/2SFCodec.h
+                src/CircularBuffer.h)
+
 set(DEPLIBS vio2sf psflib ${ZLIB_LIBRARIES})
 
 build_addon(audiodecoder.2sf 2SF DEPLIBS)
