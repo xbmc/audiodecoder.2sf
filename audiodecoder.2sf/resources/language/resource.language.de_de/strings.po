@@ -86,7 +86,7 @@ msgstr "{0:d} s"
 
 msgctxt "#30015"
 msgid "Resampling mode"
-msgid "Resampling-Modus"
+msgstr "Resampling-Modus"
 
 msgctxt "#30016"
 msgid "Used resampling quality about processing."
