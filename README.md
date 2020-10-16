@@ -1,12 +1,20 @@
-# audiodecoder.2sf addon for Kodi
+<p align="center">
+  <img src="audiodecoder.2sf/icon.png" />
+</p>
 
-This is a [Kodi](https://kodi.tv) audio decoder addon for 2SF files.
+------------------
 
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/License-GPL%20v2+-blue.svg)](LICENSE.md)
 [![Build Status](https://travis-ci.org/xbmc/audiodecoder.2sf.svg?branch=Matrix)](https://travis-ci.org/xbmc/audiodecoder.2sf/branches)
 [![Build Status](https://dev.azure.com/teamkodi/binary-addons/_apis/build/status/xbmc.audiodecoder.2sf?branchName=Matrix)](https://dev.azure.com/teamkodi/binary-addons/_build/latest?definitionId=3&branchName=Matrix)
 [![Build Status](https://jenkins.kodi.tv/view/Addons/job/xbmc/job/audiodecoder.2sf/job/Matrix/badge/icon)](https://jenkins.kodi.tv/blue/organizations/jenkins/xbmc%2Faudiodecoder.2sf/branches/)
 <!--- [![Build Status](https://ci.appveyor.com/api/projects/status/github/xbmc/audiodecoder.2sf?branch=Matrix&svg=true)](https://ci.appveyor.com/project/xbmc/audiodecoder-2sf?branch=Matrix) -->
+
+# audiodecoder.2sf addon for Kodi
+
+This is a [Kodi](https://kodi.tv) audio decoder addon for Nintendo DS audio (2SF) files.
+
+Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension.<
 
 ## Build instructions
 
