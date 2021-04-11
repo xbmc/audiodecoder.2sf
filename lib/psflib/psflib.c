@@ -484,7 +484,6 @@ static int psf_load_internal(psf_load_state * state, const char * file_name)
 	{
 		if (psf_want_status(state))
 		{
-			char *end;
 			char temp[8];
 			psf_status(state, "Expected PSF version ", 1);
 			snprintf(temp, 7, "%d", (int)state->allowed_version);
@@ -634,7 +633,9 @@ static int psf_load_internal(psf_load_state * state, const char * file_name)
 			goto error_free_tags;
 		}
 
-		exe_decompressed_size = try_exe_decompressed_size = exe_compressed_size * 3;
+		try_exe_decompressed_size = exe_compressed_size * 3;
+		// Most files are smaller arbitrary sizes, but some are larger powers of two, usually with a small header as well
+		exe_decompressed_size = try_exe_decompressed_size + 128;
 		exe_decompressed_buffer = (uint8_t *)malloc(exe_decompressed_size);
 		if (!exe_decompressed_buffer)
 		{
@@ -652,12 +653,18 @@ static int psf_load_internal(psf_load_state * state, const char * file_name)
 				goto error_free_tags;
 			}
 
-			if (try_exe_decompressed_size < 1 * 1024 * 1024)
-				try_exe_decompressed_size += 1 * 1024 * 1024;
+			if (try_exe_decompressed_size < (1 * 1024 * 1024))
+				try_exe_decompressed_size = (1 * 1024 * 1024);
 			else
-				try_exe_decompressed_size += try_exe_decompressed_size;
+				try_exe_decompressed_size <<= 1;
 
-			exe_decompressed_size = try_exe_decompressed_size;
+			if (try_exe_decompressed_size >= (512 * 1024 * 1024))
+			{
+				psf_status(state, "PSF exe section exceeds 512MB, giving up.\n", 1);
+				goto error_free_tags;
+			}
+
+			exe_decompressed_size = try_exe_decompressed_size + 128;
 
 			try_exe_decompressed_buffer = realloc(exe_decompressed_buffer, exe_decompressed_size);
 			if (!try_exe_decompressed_buffer)
