@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="audiodecoder.2sf"
-  version="3.0.2"
+  version="20.0.0"
   name="2SF Audio Decoder"
   provider-name="spiff">
   <requires>@ADDON_DEPENDS@</requires>
