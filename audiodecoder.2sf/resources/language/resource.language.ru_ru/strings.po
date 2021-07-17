@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Addons\n"
-"Report-Msgid-Bugs-To: https://github.com/xbmc/audiodecoder.ssf/issues/\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-07-03 11:29+0000\n"
+"PO-Revision-Date: 2021-07-17 13:30+0000\n"
 "Last-Translator: vdkbsd <valexgus@gmail.com>\n"
 "Language-Team: Russian <https://kodi.weblate.cloud/projects/kodi-add-ons-audio-decodersencoders/audiodecoder-2sf/ru_ru/>\n"
 "Language: ru_ru\n"
@@ -38,7 +38,7 @@ msgstr "не используется"
 
 msgctxt "#30003"
 msgid "{0:d} s"
-msgstr "{0:d} сек."
+msgstr "{0:d} с"
 
 msgctxt "#30004"
 msgid "Default fade out time"
@@ -82,7 +82,7 @@ msgstr "Количество секунд тишины, перед остано�
 
 msgctxt "#30014"
 msgid "{0:d} s"
-msgstr "{0:d} сек."
+msgstr "{0:d} с"
 
 msgctxt "#30015"
 msgid "Resampling mode"
