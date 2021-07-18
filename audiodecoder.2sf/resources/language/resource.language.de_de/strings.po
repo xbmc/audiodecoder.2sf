@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgctxt "Addon Summary"
+msgid "Nintendo DS audio file decoder"
+msgstr "Nintendo DS Audiodateidecoder"
+
+msgctxt "Addon Description"
+msgid "To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
+msgstr "Zur Unterstützung von Audiodateien, die von einigen Nintendo DS-Spielen verwendet werden.[CR][CR]Das Dual Screen Sound Format ist ein auf PSF basierendes Audioformat. Es speichert Audio, das aus den ROMs von Nintendo DS-Spielen gerippt wurde. Musikanweisungen werden in Dateien mit der Erweiterung .2sflib gespeichert, und die Musiknotation wird in Dateien mit der Erweiterung .mini2sf gespeichert."
+
 # [Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
 # [Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
 # For example, prefer wording as "This new string" instead of "This New String".
