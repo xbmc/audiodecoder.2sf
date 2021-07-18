@@ -17,6 +17,16 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.7.1\n"
 
+msgctxt "Addon Summary"
+msgid "Nintendo DS audio file decoder"
+msgstr ""
+
+msgctxt "Addon Description"
+msgid "To support game audio file used by some Nintendo DS games.
+
+Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
+msgstr ""
+
 #[Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
 #[Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
 #For example, prefer wording as "This new string" instead of "This New String".
