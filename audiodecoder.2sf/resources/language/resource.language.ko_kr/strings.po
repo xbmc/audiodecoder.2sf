@@ -5,16 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Addons\n"
-"Report-Msgid-Bugs-To: https://github.com/xbmc/audiodecoder.ssf/issues/\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-07-29 19:23+0000\n"
+"Last-Translator: Joe Baek <aalive1@gmail.com>\n"
+"Language-Team: Korean <https://kodi.weblate.cloud/projects/kodi-add-ons-audio-decodersencoders/audiodecoder-2sf/ko_kr/>\n"
 "Language: ko_kr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.7.2\n"
 
 msgctxt "Addon Summary"
 msgid "Nintendo DS audio file decoder"
@@ -24,24 +25,24 @@ msgctxt "Addon Description"
 msgid "To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
 msgstr ""
 
-#[Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
-#[Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
-#For example, prefer wording as "This new string" instead of "This New String".
-#[Referencing] If a suitable string already exists, reuse it, making a note of where it's used!
-#[Description / location] For example, "#. Description of some setting" used on "#: xbmc/addons/guidialogaddoninfo.cpp"
-#When writing a description or setting, refer to a setting name in quotes. See existing entries for guidance.
-#For example, "Press \"OK\" for \"All seasons\"" instead of "Press OK for All seasons" after first word.
+# [Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
+# [Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
+# For example, prefer wording as "This new string" instead of "This New String".
+# [Referencing] If a suitable string already exists, reuse it, making a note of where it's used!
+# [Description / location] For example, "#. Description of some setting" used on "#: xbmc/addons/guidialogaddoninfo.cpp"
+# When writing a description or setting, refer to a setting name in quotes. See existing entries for guidance.
+# For example, "Press \"OK\" for \"All seasons\"" instead of "Press OK for All seasons" after first word.
 msgctxt "#30000"
 msgid "Default length"
-msgstr ""
+msgstr "기본 길이"
 
 msgctxt "#30001"
 msgid "Used if specified file does not provide the length."
-msgstr ""
+msgstr "특정 파일이 길이 정보가 없으면 사용"
 
 msgctxt "#30002"
 msgid "unused"
-msgstr ""
+msgstr "사용 않음"
 
 msgctxt "#30003"
 msgid "{0:d} s"
@@ -49,15 +50,15 @@ msgstr ""
 
 msgctxt "#30004"
 msgid "Default fade out time"
-msgstr ""
+msgstr "기본 페이드 아웃 시간"
 
 msgctxt "#30005"
 msgid "Used if specified file does not provide the length and fade."
-msgstr ""
+msgstr "특정 파일이 길이와 페이드 정보가 없으면 사용"
 
 msgctxt "#30006"
 msgid "unused"
-msgstr ""
+msgstr "사용 않음"
 
 msgctxt "#30007"
 msgid "{0:d} ms"
@@ -65,27 +66,27 @@ msgstr ""
 
 msgctxt "#30008"
 msgid "Suppress opening silence"
-msgstr ""
+msgstr "시작 시 묵음 억제"
 
 msgctxt "#30009"
 msgid "Some files start with silent data, this prevents it and looks for the beginning."
-msgstr ""
+msgstr "어떤 파일은 묵음 데이터로 시작하는데, 이 옵션으로 건너뛰고 시작점을 찾습니다."
 
 msgctxt "#30010"
 msgid "Suppress end silence"
-msgstr ""
+msgstr "종료 시 묵음 억제"
 
 msgctxt "#30011"
 msgid "Some files end with silent data, this prevents it and looks for the end."
-msgstr ""
+msgstr "어떤 파일은 묵음 데이터로 끝나는데, 이 옵션으로 건너뛰고 종료점을 찾습니다."
 
 msgctxt "#30012"
 msgid "Second of silence to check"
-msgstr ""
+msgstr "확인할 묵음의 초"
 
 msgctxt "#30013"
 msgid "How many silent seconds are allowed before playback is stopped."
-msgstr ""
+msgstr "재생이 끝날 때까지 묵음을 몇초간 허용할지."
 
 msgctxt "#30014"
 msgid "{0:d} s"
@@ -93,11 +94,11 @@ msgstr ""
 
 msgctxt "#30015"
 msgid "Resampling mode"
-msgstr ""
+msgstr "리샘플링 모드"
 
 msgctxt "#30016"
 msgid "Used resampling quality about processing."
-msgstr ""
+msgstr "처리 관련 리샘플링 품질"
 
 msgctxt "#30017"
 msgid "Zero order hold"
