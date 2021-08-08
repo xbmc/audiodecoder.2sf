@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Addons\n"
-"Report-Msgid-Bugs-To: https://github.com/xbmc/audiodecoder.ssf/issues/\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-07-17 13:30+0000\n"
+"PO-Revision-Date: 2021-08-08 03:29+0000\n"
 "Last-Translator: vdkbsd <valexgus@gmail.com>\n"
 "Language-Team: Russian <https://kodi.weblate.cloud/projects/kodi-add-ons-audio-decodersencoders/audiodecoder-2sf/ru_ru/>\n"
 "Language: ru_ru\n"
@@ -15,15 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.7.1\n"
+"X-Generator: Weblate 4.7.2\n"
 
 msgctxt "Addon Summary"
 msgid "Nintendo DS audio file decoder"
-msgstr ""
+msgstr "Декодер аудиофайлов Nintendo DS"
 
 msgctxt "Addon Description"
 msgid "To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
-msgstr ""
+msgstr "Предназначен для поддержки звукового файла, используемого некоторыми играми Nintendo DS.[CR][CR]Dual Screen Sound Format - это аудиоформат, основанный на PSF. В нем хранятся аудиозаписи, извлеченные из ПЗУ игр Nintendo DS. Музыкальные инструкции хранятся в файлах с расширением .2sflib, а музыкальная запись - в файлах с расширением .mini2sf."
 
 # [Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
 # [Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
