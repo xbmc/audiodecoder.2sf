@@ -18,11 +18,13 @@
     <assets>
       <icon>icon.png</icon>
     </assets>
+    <summary lang="da_DK">Nintendo DS dekoder til lydfiler</summary>
     <summary lang="de_DE">Nintendo DS Audiodateidecoder</summary>
     <summary lang="en_GB">Nintendo DS audio file decoder</summary>
     <summary lang="fi_FI">Nintendo DS -äänitiedoston dekooderi</summary>
     <summary lang="ru_RU">Декодер аудиофайлов Nintendo DS</summary>
     <summary lang="vi_VN">Bộ giải mã tập tin âm thanh Nintendo DS</summary>
+    <description lang="da_DK">Understøttelse af spillydfiler, der bruges af nogle Nintendo DS-spil.[CR][CR]Dual Screen Sound Format er et lydformat baseret på PSF. Det gemmer lyd, der er rippet fra ROM'erne i Nintendo DS-spil. Musikinstruktioner gemmes .2sflib-filer, og musiknotationen gemmes i .mini2sf-filer.</description>
     <description lang="de_DE">Zur Unterstützung von Audiodateien, die von einigen Nintendo DS-Spielen verwendet werden.[CR][CR]Das Dual Screen Sound Format ist ein auf PSF basierendes Audioformat. Es speichert Audio, das aus den ROMs von Nintendo DS-Spielen gerippt wurde. Musikanweisungen werden in Dateien mit der Erweiterung .2sflib gespeichert, und die Musiknotation wird in Dateien mit der Erweiterung .mini2sf gespeichert.</description>
     <description lang="en_GB">To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension.</description>
     <description lang="ru_RU">Предназначен для поддержки звукового файла, используемого некоторыми играми Nintendo DS.[CR][CR]Dual Screen Sound Format - это аудиоформат, основанный на PSF. В нем хранятся аудиозаписи, извлеченные из ПЗУ игр Nintendo DS. Музыкальные инструкции хранятся в файлах с расширением .2sflib, а музыкальная запись - в файлах с расширением .mini2sf.</description>
