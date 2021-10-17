@@ -8,9 +8,19 @@
   <extension
     point="kodi.audiodecoder"
     name="2sf"
-    extension=".2sf|.mini2sf"
     tags="true"
-    library_@PLATFORM@="@LIBRARY_FILENAME@"/>
+    library_@PLATFORM@="@LIBRARY_FILENAME@">
+    <support>
+      <extension name=".2sf">
+        <description>30100</description>
+        <icon>icon.png</icon>
+      </extension>
+      <extension name=".mini2sf">
+        <description>30101</description>
+        <icon>icon.png</icon>
+      </extension>
+    </support>
+  </extension>
   <extension point="xbmc.addon.metadata">
     <platform>@PLATFORM@</platform>
     <license>GPL-2.0-or-later</license>

@@ -123,3 +123,15 @@ msgstr ""
 msgctxt "#30022"
 msgid "Ainc"
 msgstr ""
+
+#. Supported file extension description about ".2sf"
+#: audiodecoder.2sf/addon.xml.in
+msgctxt "#30100"
+msgid "Game audio file used by some Nintendo DS games."
+msgstr ""
+
+#. Supported file extension description about ".mini2sf"
+#: audiodecoder.2sf/addon.xml.in
+msgctxt "#30101"
+msgid "Nintendo DS Sound Information File - With their corresponding 2SFLIB file can be played."
+msgstr ""
