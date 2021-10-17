@@ -547,15 +547,15 @@ void C2SFCodec::Shutdown()
   }
 }
 
-int C2SFCodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
+int C2SFCodec::ReadPCM(uint8_t* buffer, size_t size, size_t& actualsize)
 {
   if (m_eof && !m_silenceTestBuffer.data_available())
-    return 1;
+    return AUDIODECODER_READ_ERROR;
 
   if (m_noLoop && m_tagSongMs &&
       (m_posDelta + mul_div(m_dataWritten, 1000, m_cfgDefaultSampleRate)) >=
           m_tagSongMs + m_tagFadeMs)
-    return -1;
+    return AUDIODECODER_READ_EOF;
 
   unsigned int written = 0;
 
@@ -613,7 +613,7 @@ int C2SFCodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
     if (m_silenceTestBuffer.test_silence())
     {
       m_eof = true;
-      return -1;
+      return AUDIODECODER_READ_EOF;
     }
 
     written = m_silenceTestBuffer.data_available() / 2;
@@ -673,14 +673,14 @@ int C2SFCodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
   if (!written)
   {
     m_eof = true;
-    return -1;
+    return AUDIODECODER_READ_EOF;
   }
 
 
   actualsize = written * 2 * sizeof(int16_t);
   memcpy(buffer, ptr, actualsize);
 
-  return 0;
+  return AUDIODECODER_READ_SUCCESS;
 }
 
 int64_t C2SFCodec::Seek(int64_t time)
@@ -759,7 +759,7 @@ bool C2SFCodec::ReadTag(const std::string& file, kodi::addon::AudioDecoderInfoTa
 
 //------------------------------------------------------------------------------
 
-class ATTRIBUTE_HIDDEN CMyAddon : public kodi::addon::CAddonBase
+class ATTR_DLL_LOCAL CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;
