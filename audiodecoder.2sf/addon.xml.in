@@ -6,10 +6,11 @@
   provider-name="spiff">
   <requires>@ADDON_DEPENDS@</requires>
   <extension
+    language="C++"
     point="kodi.audiodecoder"
     name="2sf"
     tags="true"
-    library_@PLATFORM@="@LIBRARY_FILENAME@">
+    library_@PLATFORM@="audiodecoder.2sf.bin"> <!-- Temporary forced to audiodecoder.2sf.bin until sandbox system set it -->
     <support>
       <extension name=".2sf">
         <description>30100</description>

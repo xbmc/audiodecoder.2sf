@@ -32,7 +32,7 @@ extern "C"
   static size_t psf_file_fread(void* buffer, size_t size, size_t count, void* handle)
   {
     kodi::vfs::CFile* file = static_cast<kodi::vfs::CFile*>(handle);
-    return file->Read(buffer, size * count);
+    return file->Read(static_cast<uint8_t*>(buffer), size * count);
   }
 
   static int psf_file_fseek(void* handle, int64_t offset, int whence)
@@ -391,8 +391,8 @@ extern "C"
 
 //------------------------------------------------------------------------------
 
-C2SFCodec::C2SFCodec(KODI_HANDLE instance, const std::string& version)
-  : CInstanceAudioDecoder(instance, version)
+C2SFCodec::C2SFCodec(KODI_HANDLE instance)
+  : CInstanceAudioDecoder(instance)
 {
 }
 
@@ -418,18 +418,18 @@ bool C2SFCodec::Init(const std::string& filename,
     return false;
   }
 
-  m_cfgSuppressOpeningSilence = kodi::GetSettingBoolean("suppressopeningsilence", true);
-  m_cfgSuppressEndSilence = kodi::GetSettingBoolean("suppressendsilence", true);
-  m_cfgEndSilenceSeconds = kodi::GetSettingInt("endsilenceseconds", 5);
-  m_cfgResamplingQuality = kodi::GetSettingInt("resamplingquality", 4);
+  m_cfgSuppressOpeningSilence = kodi::addon::GetSettingBoolean("suppressopeningsilence", true);
+  m_cfgSuppressEndSilence = kodi::addon::GetSettingBoolean("suppressendsilence", true);
+  m_cfgEndSilenceSeconds = kodi::addon::GetSettingInt("endsilenceseconds", 5);
+  m_cfgResamplingQuality = kodi::addon::GetSettingInt("resamplingquality", 4);
 
   m_tagSongMs = info_state.tagSongMs;
   m_tagFadeMs = info_state.tagFadeMs;
 
   if (!m_tagSongMs)
   {
-    m_tagSongMs = kodi::GetSettingInt("defaultlength", 170) * 1000;
-    m_tagFadeMs = kodi::GetSettingInt("defaultfade", 10000);
+    m_tagSongMs = kodi::addon::GetSettingInt("defaultlength", 170) * 1000;
+    m_tagFadeMs = kodi::addon::GetSettingInt("defaultfade", 10000);
   }
 
   m_path = filename;
@@ -763,13 +763,12 @@ class ATTR_DLL_LOCAL CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;
-  ADDON_STATUS CreateInstance(int instanceType,
+  ADDON_STATUS CreateInstance(ADDON_INSTANCE instanceType,
                               const std::string& instanceID,
                               KODI_HANDLE instance,
-                              const std::string& version,
                               KODI_HANDLE& addonInstance) override
   {
-    addonInstance = new C2SFCodec(instance, version);
+    addonInstance = new C2SFCodec(instance);
     return ADDON_STATUS_OK;
   }
   virtual ~CMyAddon() = default;

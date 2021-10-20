@@ -65,7 +65,7 @@ struct TSFContext
 class ATTR_DLL_LOCAL C2SFCodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
-  C2SFCodec(KODI_HANDLE instance, const std::string& version);
+  C2SFCodec(KODI_HANDLE instance);
 
   virtual ~C2SFCodec();
 

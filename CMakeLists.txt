@@ -21,6 +21,13 @@ set(2SF_HEADERS src/2SFCodec.h
 
 set(DEPLIBS vio2sf psflib ${ZLIB_LIBRARIES})
 
+#--------------------------------------------------------------------------------
+# Temporary added until sandboxed cmake build part finished
+add_executable(audiodecoder.2sf.bin ${2SF_SOURCES} ${2SF_HEADERS})
+target_link_libraries(audiodecoder.2sf.bin PRIVATE ${DEPLIBS} pthread dl)
+set(2SF_ADDITIONAL_BINARY_EXE ${CMAKE_BINARY_DIR}/audiodecoder.2sf.bin)
+#--------------------------------------------------------------------------------
+
 build_addon(audiodecoder.2sf 2SF DEPLIBS)
 
 if(CORE_SYSTEM_NAME MATCHES windows)
