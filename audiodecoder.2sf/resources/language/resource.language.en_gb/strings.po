@@ -124,6 +124,18 @@ msgctxt "#30022"
 msgid "Ainc"
 msgstr ""
 
+#. Boolean setting to allow scan of title number by file name (default is enabled)
+#: audiodecoder.2sf/resources/settings.xml
+msgctxt "#30023"
+msgid "Get track number from filename"
+msgstr ""
+
+#. Help text about setting on id 30023
+#: audiodecoder.2sf/resources/settings.xml
+msgctxt "#30024"
+msgid "If activated, tries to read the used song track number from file names. Note: This cannot always be determined 100% correctly."
+msgstr ""
+
 #. Supported file extension description about ".2sf"
 #: audiodecoder.2sf/addon.xml.in
 msgctxt "#30100"

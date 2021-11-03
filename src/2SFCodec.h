@@ -85,6 +85,7 @@ public:
 private:
   bool Load();
   void Shutdown();
+  int GetTrackNumber(const std::string& filename);
 
   inline uint64_t time_to_samples(double p_time, uint32_t p_sample_rate)
   {

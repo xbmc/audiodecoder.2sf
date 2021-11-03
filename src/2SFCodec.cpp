@@ -742,6 +742,8 @@ bool C2SFCodec::ReadTag(const std::string& file, kodi::addon::AudioDecoderInfoTa
     return false;
   }
 
+  if (kodi::GetSettingBoolean("tracknumbersearch", true))
+    tag.SetTrack(GetTrackNumber(file));
   tag.SetTitle(info_state.title);
   if (!info_state.artist.empty())
     tag.SetArtist(info_state.artist);
@@ -755,6 +757,63 @@ bool C2SFCodec::ReadTag(const std::string& file, kodi::addon::AudioDecoderInfoTa
   tag.SetChannels(2);
 
   return true;
+}
+
+int C2SFCodec::GetTrackNumber(const std::string& filename)
+{
+  // Try to get track number from file name.
+  //
+  // On test files found following conditions:
+  // - "01 Explore a New World.mini2sf" - With decimal number on begin
+  // - "0000 ALERT_SEQ.mini2sf" - With hexadecimal on begin (always as 4 characters)
+  // - "NTR-ANNJ-JPN-000b.mini2sf" - With hexadecimal on end (always as 4 characters)
+
+  bool hexDigit = true;
+  std::string number;
+  std::string name = kodi::vfs::GetFileName(filename);
+  name = name.substr(0, name.rfind('.'));
+  if (name.length() >= 4)
+  {
+    for (size_t i = 0; i < 4; ++i)
+    {
+      if (!kodi::tools::StringUtils::IsAsciiXDigit(name[i]))
+      {
+        hexDigit = false;
+        break;
+      }
+    }
+    if (hexDigit)
+    {
+      number = kodi::tools::StringUtils::Format("0x%c%c%c%c", name[0], name[1], name[2], name[3]);
+    }
+    else if (isdigit(name[0]))
+    {
+      return std::stoul(name, nullptr, 10);
+    }
+    else
+    {
+      hexDigit = true;
+      size_t startPos = name.size()-4;
+      for (size_t i = 0; i < 4; ++i)
+      {
+        if (!kodi::tools::StringUtils::IsAsciiXDigit(name[startPos+i]))
+        {
+          hexDigit = false;
+          break;
+        }
+      }
+      if (hexDigit)
+      {
+        number = kodi::tools::StringUtils::Format("0x%c%c%c%c", name[startPos+0], name[startPos+1], name[startPos+2], name[startPos+3]);
+      }
+    }
+  }
+  if (!number.empty())
+  {
+    return std::stoul(number, nullptr, 16)+1;
+  }
+
+  return 0;
 }
 
 //------------------------------------------------------------------------------
