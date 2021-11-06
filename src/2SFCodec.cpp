@@ -547,15 +547,15 @@ void C2SFCodec::Shutdown()
   }
 }
 
-int C2SFCodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
+int C2SFCodec::ReadPCM(uint8_t* buffer, size_t size, size_t& actualsize)
 {
   if (m_eof && !m_silenceTestBuffer.data_available())
-    return 1;
+    return AUDIODECODER_READ_ERROR;
 
   if (m_noLoop && m_tagSongMs &&
       (m_posDelta + mul_div(m_dataWritten, 1000, m_cfgDefaultSampleRate)) >=
           m_tagSongMs + m_tagFadeMs)
-    return -1;
+    return AUDIODECODER_READ_EOF;
 
   unsigned int written = 0;
 
@@ -613,7 +613,7 @@ int C2SFCodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
     if (m_silenceTestBuffer.test_silence())
     {
       m_eof = true;
-      return -1;
+      return AUDIODECODER_READ_EOF;
     }
 
     written = m_silenceTestBuffer.data_available() / 2;
@@ -673,14 +673,14 @@ int C2SFCodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
   if (!written)
   {
     m_eof = true;
-    return -1;
+    return AUDIODECODER_READ_EOF;
   }
 
 
   actualsize = written * 2 * sizeof(int16_t);
   memcpy(buffer, ptr, actualsize);
 
-  return 0;
+  return AUDIODECODER_READ_SUCCESS;
 }
 
 int64_t C2SFCodec::Seek(int64_t time)
@@ -742,6 +742,8 @@ bool C2SFCodec::ReadTag(const std::string& file, kodi::addon::AudioDecoderInfoTa
     return false;
   }
 
+  if (kodi::GetSettingBoolean("tracknumbersearch", true))
+    tag.SetTrack(GetTrackNumber(file));
   tag.SetTitle(info_state.title);
   if (!info_state.artist.empty())
     tag.SetArtist(info_state.artist);
@@ -757,9 +759,66 @@ bool C2SFCodec::ReadTag(const std::string& file, kodi::addon::AudioDecoderInfoTa
   return true;
 }
 
+int C2SFCodec::GetTrackNumber(const std::string& filename)
+{
+  // Try to get track number from file name.
+  //
+  // On test files found following conditions:
+  // - "01 Explore a New World.mini2sf" - With decimal number on begin
+  // - "0000 ALERT_SEQ.mini2sf" - With hexadecimal on begin (always as 4 characters)
+  // - "NTR-ANNJ-JPN-000b.mini2sf" - With hexadecimal on end (always as 4 characters)
+
+  bool hexDigit = true;
+  std::string number;
+  std::string name = kodi::vfs::GetFileName(filename);
+  name = name.substr(0, name.rfind('.'));
+  if (name.length() >= 4)
+  {
+    for (size_t i = 0; i < 4; ++i)
+    {
+      if (!kodi::tools::StringUtils::IsAsciiXDigit(name[i]))
+      {
+        hexDigit = false;
+        break;
+      }
+    }
+    if (hexDigit)
+    {
+      number = kodi::tools::StringUtils::Format("0x%c%c%c%c", name[0], name[1], name[2], name[3]);
+    }
+    else if (isdigit(name[0]))
+    {
+      return std::stoul(name, nullptr, 10);
+    }
+    else
+    {
+      hexDigit = true;
+      size_t startPos = name.size()-4;
+      for (size_t i = 0; i < 4; ++i)
+      {
+        if (!kodi::tools::StringUtils::IsAsciiXDigit(name[startPos+i]))
+        {
+          hexDigit = false;
+          break;
+        }
+      }
+      if (hexDigit)
+      {
+        number = kodi::tools::StringUtils::Format("0x%c%c%c%c", name[startPos+0], name[startPos+1], name[startPos+2], name[startPos+3]);
+      }
+    }
+  }
+  if (!number.empty())
+  {
+    return std::stoul(number, nullptr, 16)+1;
+  }
+
+  return 0;
+}
+
 //------------------------------------------------------------------------------
 
-class ATTRIBUTE_HIDDEN CMyAddon : public kodi::addon::CAddonBase
+class ATTR_DLL_LOCAL CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;

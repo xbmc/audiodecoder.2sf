@@ -65,6 +65,10 @@
           </constraints>
           <control type="list" format="string" />
         </setting>
+        <setting id="tracknumbersearch" type="boolean" label="30023" help="30024">
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
       </group>
     </category>
   </section>
