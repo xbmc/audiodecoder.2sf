@@ -21,6 +21,7 @@
     <summary lang="da_DK">Nintendo DS afkoder til lydfiler</summary>
     <summary lang="de_DE">Nintendo DS Audiodateidecoder</summary>
     <summary lang="en_GB">Nintendo DS audio file decoder</summary>
+    <summary lang="es_AR">Decodificador de ficheros de audio Nintendo DS</summary>
     <summary lang="fi_FI">Nintendo DS -äänitiedoston dekooderi</summary>
     <summary lang="fr_FR">Décodeur de fichier audio Nintendo DS</summary>
     <summary lang="id_ID">Dekoder file audio Nintendo DS</summary>
@@ -29,6 +30,7 @@
     <summary lang="ru_RU">Декодер аудиофайлов Nintendo DS</summary>
     <summary lang="vi_VN">Bộ giải mã tập tin âm thanh Nintendo DS</summary>
     <summary lang="zh_CN">任天堂 DS 音频文件解码器</summary>
+    <description lang="bs_BA">Za podršku audio datoteke igre koju koriste neke Nintendo DS igre.[CR][CR]Dual Screen Sound Format je audio format zasnovan na PSF-u. Pohranjuje zvuk ripan iz ROM-ova Nintendo DS igara. Muzička uputstva se čuvaju u fajlovima sa ekstenzijom .2sflib, a muzički zapisi se čuvaju u fajlovima sa ekstenzijom .mini2sf.</description>
     <description lang="da_DK">Understøttelse af spillydfiler, der bruges af nogle Nintendo DS-spil.[CR][CR]Dual Screen Sound Format er et lydformat baseret på PSF. Det gemmer lyd, der er rippet fra ROM'erne i Nintendo DS-spil. Musikinstruktioner gemmes .2sflib-filer, og musiknotationen gemmes i .mini2sf-filer.</description>
     <description lang="de_DE">Zur Unterstützung von Audiodateien, die von einigen Nintendo DS-Spielen verwendet werden.[CR][CR]Das Dual Screen Sound Format ist ein auf PSF basierendes Audioformat. Es speichert Audio, das aus den ROMs von Nintendo DS-Spielen gerippt wurde. Musikanweisungen werden in Dateien mit der Erweiterung .2sflib gespeichert, und die Musiknotation wird in Dateien mit der Erweiterung .mini2sf gespeichert.</description>
     <description lang="en_GB">To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension.</description>
