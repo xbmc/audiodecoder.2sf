@@ -391,8 +391,7 @@ extern "C"
 
 //------------------------------------------------------------------------------
 
-C2SFCodec::C2SFCodec(KODI_HANDLE instance, const std::string& version)
-  : CInstanceAudioDecoder(instance, version)
+C2SFCodec::C2SFCodec(const kodi::addon::IInstanceInfo& instance) : CInstanceAudioDecoder(instance)
 {
 }
 
@@ -418,18 +417,18 @@ bool C2SFCodec::Init(const std::string& filename,
     return false;
   }
 
-  m_cfgSuppressOpeningSilence = kodi::GetSettingBoolean("suppressopeningsilence", true);
-  m_cfgSuppressEndSilence = kodi::GetSettingBoolean("suppressendsilence", true);
-  m_cfgEndSilenceSeconds = kodi::GetSettingInt("endsilenceseconds", 5);
-  m_cfgResamplingQuality = kodi::GetSettingInt("resamplingquality", 4);
+  m_cfgSuppressOpeningSilence = kodi::addon::GetSettingBoolean("suppressopeningsilence", true);
+  m_cfgSuppressEndSilence = kodi::addon::GetSettingBoolean("suppressendsilence", true);
+  m_cfgEndSilenceSeconds = kodi::addon::GetSettingInt("endsilenceseconds", 5);
+  m_cfgResamplingQuality = kodi::addon::GetSettingInt("resamplingquality", 4);
 
   m_tagSongMs = info_state.tagSongMs;
   m_tagFadeMs = info_state.tagFadeMs;
 
   if (!m_tagSongMs)
   {
-    m_tagSongMs = kodi::GetSettingInt("defaultlength", 170) * 1000;
-    m_tagFadeMs = kodi::GetSettingInt("defaultfade", 10000);
+    m_tagSongMs = kodi::addon::GetSettingInt("defaultlength", 170) * 1000;
+    m_tagFadeMs = kodi::addon::GetSettingInt("defaultfade", 10000);
   }
 
   m_path = filename;
@@ -742,7 +741,7 @@ bool C2SFCodec::ReadTag(const std::string& file, kodi::addon::AudioDecoderInfoTa
     return false;
   }
 
-  if (kodi::GetSettingBoolean("tracknumbersearch", true))
+  if (kodi::addon::GetSettingBoolean("tracknumbersearch", true))
     tag.SetTrack(GetTrackNumber(file));
   tag.SetTitle(info_state.title);
   if (!info_state.artist.empty())
@@ -793,10 +792,10 @@ int C2SFCodec::GetTrackNumber(const std::string& filename)
     else
     {
       hexDigit = true;
-      size_t startPos = name.size()-4;
+      size_t startPos = name.size() - 4;
       for (size_t i = 0; i < 4; ++i)
       {
-        if (!kodi::tools::StringUtils::IsAsciiXDigit(name[startPos+i]))
+        if (!kodi::tools::StringUtils::IsAsciiXDigit(name[startPos + i]))
         {
           hexDigit = false;
           break;
@@ -804,13 +803,15 @@ int C2SFCodec::GetTrackNumber(const std::string& filename)
       }
       if (hexDigit)
       {
-        number = kodi::tools::StringUtils::Format("0x%c%c%c%c", name[startPos+0], name[startPos+1], name[startPos+2], name[startPos+3]);
+        number =
+            kodi::tools::StringUtils::Format("0x%c%c%c%c", name[startPos + 0], name[startPos + 1],
+                                             name[startPos + 2], name[startPos + 3]);
       }
     }
   }
   if (!number.empty())
   {
-    return std::stoul(number, nullptr, 16)+1;
+    return std::stoul(number, nullptr, 16) + 1;
   }
 
   return 0;
@@ -822,13 +823,10 @@ class ATTR_DLL_LOCAL CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;
-  ADDON_STATUS CreateInstance(int instanceType,
-                              const std::string& instanceID,
-                              KODI_HANDLE instance,
-                              const std::string& version,
-                              KODI_HANDLE& addonInstance) override
+  ADDON_STATUS CreateInstance(const kodi::addon::IInstanceInfo& instance,
+                              KODI_ADDON_INSTANCE_HDL& hdl) override
   {
-    addonInstance = new C2SFCodec(instance, version);
+    hdl = new C2SFCodec(instance);
     return ADDON_STATUS_OK;
   }
   virtual ~CMyAddon() = default;
