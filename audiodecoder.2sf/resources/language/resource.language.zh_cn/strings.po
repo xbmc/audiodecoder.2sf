@@ -22,8 +22,12 @@ msgid "Nintendo DS audio file decoder"
 msgstr "任天堂 DS 音频文件解码器"
 
 msgctxt "Addon Description"
-msgid "To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
-msgstr "支持某些任天堂 DS 游戏使用的游戏音频文件。[CR][CR]双屏声音格式是基于 PSF 的音频格式。它存储从任天堂 DS 游戏 ROM 中提取的音频。音乐指令存储在扩展名为.2sflib的文件中，音乐符号存储在扩展名为.mini2sf的文件中。"
+msgid "To support game audio file used by some Nintendo DS games.
+
+Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
+msgstr "支持某些任天堂 DS 游戏使用的游戏音频文件。
+
+双屏声音格式是基于 PSF 的音频格式。它存储从任天堂 DS 游戏 ROM 中提取的音频。音乐指令存储在扩展名为.2sflib的文件中，音乐符号存储在扩展名为.mini2sf的文件中。"
 
 # [Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
 # [Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
