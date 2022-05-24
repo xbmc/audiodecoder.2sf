@@ -32,7 +32,7 @@ extern "C"
   static size_t psf_file_fread(void* buffer, size_t size, size_t count, void* handle)
   {
     kodi::vfs::CFile* file = static_cast<kodi::vfs::CFile*>(handle);
-    return file->Read(buffer, size * count);
+    return file->Read(static_cast<uint8_t*>(buffer), size * count);
   }
 
   static int psf_file_fseek(void* handle, int64_t offset, int whence)
