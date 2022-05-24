@@ -1,6 +1,6 @@
 /*
- *  Copyright (C) 2014-2021 Arne Morten Kvarving
- *  Copyright (C) 2016-2021 Team Kodi (https://kodi.tv)
+ *  Copyright (C) 2014-2022 Arne Morten Kvarving
+ *  Copyright (C) 2016-2022 Team Kodi (https://kodi.tv)
  *
  *  SPDX-License-Identifier: GPL-2.0-or-later
  *  See LICENSE.md for more information.
