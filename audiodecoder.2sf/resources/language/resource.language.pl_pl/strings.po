@@ -5,24 +5,25 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Addons\n"
-"Report-Msgid-Bugs-To: https://github.com/xbmc/audiodecoder.ssf/issues/\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-10-28 09:00+0000\n"
+"Last-Translator: AdiOpi <ad.ro@wp.pl>\n"
+"Language-Team: Polish <https://kodi.weblate.cloud/projects/kodi-add-ons-audio-decodersencoders/audiodecoder-2sf/pl_pl/>\n"
 "Language: pl_pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 msgctxt "Addon Summary"
 msgid "Nintendo DS audio file decoder"
-msgstr ""
+msgstr "Dekoder plików audio Nintendo DS"
 
 msgctxt "Addon Description"
 msgid "To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
-msgstr ""
+msgstr "Do obsługi pliku audio gry używanego przez niektóre gry Nintendo DS.[CR][CR]Format dźwięku podwójnego ekranu to format audio oparty na PSF.Przechowuje dźwięk zgrany z pamięci ROM gier Nintendo DS.Instrukcje muzyczne są przechowywane w plikach z rozszerzeniem .2sflib, a notacja muzyczna w plikach z rozszerzeniem .mini2sf."
 
 # [Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
 # [Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
@@ -37,11 +38,11 @@ msgstr ""
 
 msgctxt "#30001"
 msgid "Used if specified file does not provide the length."
-msgstr ""
+msgstr "Używane, jeśli określony plik nie podaje długości."
 
 msgctxt "#30002"
 msgid "unused"
-msgstr ""
+msgstr "nieużywany"
 
 msgctxt "#30003"
 msgid "{0:d} s"
@@ -49,15 +50,15 @@ msgstr ""
 
 msgctxt "#30004"
 msgid "Default fade out time"
-msgstr ""
+msgstr "Domyślny czas zanikania"
 
 msgctxt "#30005"
 msgid "Used if specified file does not provide the length and fade."
-msgstr ""
+msgstr "Używane, jeśli podany plik nie podaje długości i zaniku."
 
 msgctxt "#30006"
 msgid "unused"
-msgstr ""
+msgstr "nieużywany"
 
 msgctxt "#30007"
 msgid "{0:d} ms"
@@ -73,7 +74,7 @@ msgstr ""
 
 msgctxt "#30010"
 msgid "Suppress end silence"
-msgstr ""
+msgstr "Stłumić ciszę końcową"
 
 msgctxt "#30011"
 msgid "Some files end with silent data, this prevents it and looks for the end."
@@ -85,7 +86,7 @@ msgstr ""
 
 msgctxt "#30013"
 msgid "How many silent seconds are allowed before playback is stopped."
-msgstr ""
+msgstr "Ile cichych sekund jest dozwolonych przed zatrzymaniem odtwarzania."
 
 msgctxt "#30014"
 msgid "{0:d} s"
@@ -93,7 +94,7 @@ msgstr ""
 
 msgctxt "#30015"
 msgid "Resampling mode"
-msgstr ""
+msgstr "Tryb ponownego próbkowania"
 
 msgctxt "#30016"
 msgid "Used resampling quality about processing."
