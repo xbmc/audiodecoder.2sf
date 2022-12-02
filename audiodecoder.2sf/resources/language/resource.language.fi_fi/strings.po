@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: KODI Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-12-02 08:15+0000\n"
-"Last-Translator: Tommi Raulahti <traulahti@gmail.com>\n"
+"PO-Revision-Date: 2022-12-02 22:59+0000\n"
+"Last-Translator: Oskari Lavinto <olavinto@protonmail.com>\n"
 "Language-Team: Finnish <https://kodi.weblate.cloud/projects/kodi-add-ons-audio-decodersencoders/audiodecoder-2sf/fi_fi/>\n"
 "Language: fi_fi\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "Nintendo DS -äänitiedostojen dekooderi"
 
 msgctxt "Addon Description"
 msgid "To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
-msgstr "Joidenkin Nintendo DS -pelien käyttämien pelien äänitiedostojen tukeminen.[CR][CR]Dual Screen Sound Format on PSF:ään perustuva äänimuoto. Se tallentaa Nintendo DS -pelien ROM-levyiltä kopioitua ääntä. Musiikkiohjeet tallennetaan tiedostoihin, joiden tunniste on .2sflib, ja nuotinnustiedostot tallennetaan tiedostoihin, joiden tunniste on .mini2sf."
+msgstr "Tuki joidenkin Nintendo DS -pelien käyttämien pelien äänitiedostoille.[CR][CR]Dual Screen Sound Format on PSF-pohjainen äänimuoto, jota käytetään Nintendo DS -pelien ROM-medioilta kopioidun äänen tallennukseen. Musiikkiohjeet tallennetaan tiedostoihin, joiden tunniste on .2sflib, ja nuotinnustiedostot tiedostoihin, joiden tunniste on .mini2sf."
 
 # [Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
 # [Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
@@ -86,7 +86,7 @@ msgstr ""
 
 msgctxt "#30013"
 msgid "How many silent seconds are allowed before playback is stopped."
-msgstr "Kuinka monta sekuntia hiljaisuutta sallitaan ennen toiston pysäyttämistä."
+msgstr "Kuinka monta äänentöntä sekuntia sallitaan kunnes toisto pysäytetään."
 
 msgctxt "#30014"
 msgid "{0:d} s"
@@ -94,7 +94,7 @@ msgstr "{0:d} s"
 
 msgctxt "#30015"
 msgid "Resampling mode"
-msgstr "Uudelleennäytteenottotila"
+msgstr "Uudelleenäytteistyksen tila"
 
 msgctxt "#30016"
 msgid "Used resampling quality about processing."
