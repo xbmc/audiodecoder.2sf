@@ -28,6 +28,7 @@
     <summary lang="es_MX">Decodificador de archivos de audio de Nintendo DS</summary>
     <summary lang="fi_FI">Nintendo DS -äänitiedostojen dekooderi</summary>
     <summary lang="fr_FR">Décodeur de fichier audio Nintendo DS</summary>
+    <summary lang="hr_HR">Nintendo DS zvučni dekôder</summary>
     <summary lang="id_ID">Dekoder file audio Nintendo DS</summary>
     <summary lang="it_IT">Nintendo DS audio file decoder</summary>
     <summary lang="ko_KR">닌텐도 DS 오디오 파일 디코더</summary>
@@ -50,6 +51,7 @@
     <description lang="es_ES">Soporta archivos de audio de juego usados por algunos juegos de Nintendo DS.[CR][CR]Dual Screen Sound Format es un formato de audio basado en PSF. Guarda el audio extraido de las ROMs de los juegos de Nintendo DS. Las instrucciones musicales se almacenan en archivos con extensión .2sflib y la notacion musical se almacena en archivos con extensión .mini2sf.</description>
     <description lang="fi_FI">Tuki joidenkin Nintendo DS -pelien käyttämien pelien äänitiedostoille.[CR][CR]Dual Screen Sound Format on PSF-pohjainen äänimuoto, jota käytetään Nintendo DS -pelien ROM-medioilta kopioidun äänen tallennukseen. Musiikkiohjeet tallennetaan tiedostoihin, joiden tunniste on .2sflib, ja nuotinnustiedostot tiedostoihin, joiden tunniste on .mini2sf.</description>
     <description lang="fr_FR">Prend en charge les fichiers audio utilisés par certains jeux Nintendo DS.[CR][CR]Le format audio double écran est un format audio basé sur PSF. Il stocke l&apos;audio extrait des ROM des jeux Nintendo DS. Les instructions musicales sont stockées dans des fichiers avec une extension .2sflib et la notation musicale est stockée dans des fichiers avec une extension .mini2sf.</description>
+    <description lang="hr_HR">Za podršku zvučnih datoteka igre korištenih u određenim Nintendo DS igrama.[CR][CR]Dual Screen Sound Format je zvučni format temeljen na PSF. Sprema zvuk izdvojen iz ROM-a Nintendo DS igra. Glazbene instrukcije su spremljene u datoteci s .2sflib datotečnim proširenjem, a glazba je spremljena u datotekama s a .mini2sf datotečnim proširenjem.</description>
     <description lang="id_ID">Untuk mendukung file audio game yang digunakan oleh beberapa game Nintendo DS.[CR][CR]Dual Screen Sound Format adalah format audio berbasis PSF. Ini menyimpan audio yang diambil dari ROM game Nintendo DS. Instruksi musik disimpan dalam file dengan ekstensi .2sflib dan notasi musik disimpan dalam file dengan ekstensi .mini2sf.</description>
     <description lang="it_IT">Per supportare il file audio di gioco utilizzato da alcuni giochi per Nintendo DS.[CR][CR]Il formato audio a doppio schermo è un formato audio basato su PSF. Memorizza l&apos;audio estratto dalle ROM dei giochi per Nintendo DS. Le istruzioni musicali sono memorizzate in file con estensione .2sflib e la notazione musicale in file con estensione .mini2sf.</description>
     <description lang="ko_KR">일부 Nintendo DS 게임에서 사용하는 게임 오디오 파일을 지원합니다.[CR][CR]듀얼 스크린 사운드 포맷은 PSF 기반의 오디오 포맷입니다. Nintendo DS 게임의 ROM에서 추출한 오디오를 저장합니다. 음악 설명은 .2sflib 확장자를 가진 파일에 저장되고 악보는 .mini2sf 확장자를 가진 파일에 저장됩니다.</description>
