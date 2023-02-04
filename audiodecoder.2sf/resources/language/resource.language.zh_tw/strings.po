@@ -58,7 +58,7 @@ msgstr ""
 
 msgctxt "#30006"
 msgid "unused"
-msgstr ""
+msgstr "未使用"
 
 msgctxt "#30007"
 msgid "{0:d} ms"
@@ -90,7 +90,7 @@ msgstr ""
 
 msgctxt "#30014"
 msgid "{0:d} s"
-msgstr ""
+msgstr "{0:d} 秒"
 
 msgctxt "#30015"
 msgid "Resampling mode"
