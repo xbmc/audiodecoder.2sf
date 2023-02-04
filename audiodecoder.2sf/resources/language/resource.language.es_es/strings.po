@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: KODI Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-01-22 23:13+0000\n"
-"Last-Translator: Alfonso Cachero <alfonso.cachero@gmail.com>\n"
+"PO-Revision-Date: 2023-02-04 09:41+0000\n"
+"Last-Translator: roliverosc <roliverosc@hotmail.com>\n"
 "Language-Team: Spanish (Spain) <https://kodi.weblate.cloud/projects/kodi-add-ons-audio-decodersencoders/audiodecoder-2sf/es_es/>\n"
 "Language: es_es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.15.2\n"
 
 msgctxt "Addon Summary"
 msgid "Nintendo DS audio file decoder"
@@ -23,7 +23,7 @@ msgstr "Decodificador de archivos de audio Nintendo DS"
 
 msgctxt "Addon Description"
 msgid "To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
-msgstr "Soporta archivos de audio de juego usados por algunos juegos de Nintendo DS.[CR][CR]Dual Screen Sound Format es un formato de audio basado en PSF. Guarda el audio extraido de las ROMs de los juegos de Nintendo DS. Las instrucciones musicales se almacenan en archivos con extensión .2sflib y la notacion musical se almacena en archivos con extensión .mini2sf."
+msgstr "Soporta archivos de audio de juego usados por algunos juegos de Nintendo DS.[CR][CR]Dual Screen Sound Format es un formato de audio basado en PSF. Guarda el audio extraído de las ROMs de los juegos de Nintendo DS. Las instrucciones musicales se almacenan en archivos con extensión .2sflib y la notación musical se almacena en archivos con extensión .mini2sf."
 
 # [Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
 # [Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
