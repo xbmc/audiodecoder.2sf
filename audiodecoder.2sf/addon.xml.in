@@ -54,6 +54,7 @@
     <summary lang="tr_TR">Nintendo DS ses dosyası çözücüsü</summary>
     <summary lang="vi_VN">Bộ giải mã tập tin âm thanh Nintendo DS</summary>
     <summary lang="zh_CN">任天堂 DS 音频文件解码器</summary>
+    <summary lang="zh_TW">Nintendo DS 音訊檔案解碼器</summary>
     <description lang="bs_BA">Za podršku audio datoteke igre koju koriste neke Nintendo DS igre.[CR][CR]Dual Screen Sound Format je audio format zasnovan na PSF-u. Pohranjuje zvuk ripan iz ROM-ova Nintendo DS igara. Muzička uputstva se čuvaju u fajlovima sa ekstenzijom .2sflib, a muzički zapisi se čuvaju u fajlovima sa ekstenzijom .mini2sf.</description>
     <description lang="ca_ES">Per donar suport als fitxers d&apos;àudio utilitzats per alguns jocs de Nintendo DS.[CR][CR]El format de so de pantalla doble (Dual Screen Sound Format) és un format d&apos;àudio basat en PSF. Emmagatzema àudio extret de les ROM dels jocs de Nintendo DS. Les instruccions musicals s&apos;emmagatzemen en fitxers amb una extensió .2sflib i la notació musical s&apos;emmagatzemen en fitxers amb una extensió .mini2sf.</description>
     <description lang="da_DK">Understøttelse af spillydfiler, der bruges af nogle Nintendo DS-spil.[CR][CR]Dual Screen Sound Format er et lydformat baseret på PSF. Det gemmer lyd, der er rippet fra ROM&apos;erne i Nintendo DS-spil. Musikinstruktioner gemmes .2sflib-filer, og musiknotationen gemmes i .mini2sf-filer.</description>
