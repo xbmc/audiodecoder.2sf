@@ -1,2 +1,5 @@
-psflib source from https://github.com/kode54/psflib
-Sync to 77dfb4a (17 March 2021)
+psflib source from https://gitlab.com/kode54/psflib
+Sync to 3bea757c (31 January 2022)
+
+Old source:
+- https://github.com/kode54/psflib (77dfb4a (17 March 2021))
