@@ -1,6 +1,7 @@
-vio2sf source from https://git.lopez-snowhill.net/chris/vio2sf
+vio2sf source from https://gitlab.com/kode54/vio2sf
 Sync to 1d68801f5f (2 May 2019)
 
 Old source:
+- https://git.lopez-snowhill.net/chris/vio2sf (1d68801f5f (2 May 2019))
 - https://bitbucket.org/kode54/vio2sf (e0501e3 (12 Dec 2017))
 - https://g.losno.co/chris/vio2sf (1d68801f5f (2 May 2019))
