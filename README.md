@@ -5,10 +5,10 @@
 ------------------
 
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/License-GPL%20v2+-blue.svg)](LICENSE.md)
-[![Build and run tests](https://github.com/xbmc/audiodecoder.2sf/actions/workflows/build.yml/badge.svg?branch=Nexus)](https://github.com/xbmc/audiodecoder.2sf/actions/workflows/build.yml)
-[![Build Status](https://dev.azure.com/teamkodi/binary-addons/_apis/build/status/xbmc.audiodecoder.2sf?branchName=Nexus)](https://dev.azure.com/teamkodi/binary-addons/_build/latest?definitionId=3&branchName=Nexus)
-[![Build Status](https://jenkins.kodi.tv/view/Addons/job/xbmc/job/audiodecoder.2sf/job/Nexus/badge/icon)](https://jenkins.kodi.tv/blue/organizations/jenkins/xbmc%2Faudiodecoder.2sf/branches/)
-<!--- [![Build Status](https://ci.appveyor.com/api/projects/status/github/xbmc/audiodecoder.2sf?branch=Nexus&svg=true)](https://ci.appveyor.com/project/xbmc/audiodecoder-2sf?branch=Nexus) -->
+[![Build and run tests](https://github.com/xbmc/audiodecoder.2sf/actions/workflows/build.yml/badge.svg?branch=Omega)](https://github.com/xbmc/audiodecoder.2sf/actions/workflows/build.yml)
+[![Build Status](https://dev.azure.com/teamkodi/binary-addons/_apis/build/status/xbmc.audiodecoder.2sf?branchName=Omega)](https://dev.azure.com/teamkodi/binary-addons/_build/latest?definitionId=3&branchName=Omega)
+[![Build Status](https://jenkins.kodi.tv/view/Addons/job/xbmc/job/audiodecoder.2sf/job/Omega/badge/icon)](https://jenkins.kodi.tv/blue/organizations/jenkins/xbmc%2Faudiodecoder.2sf/branches/)
+<!--- [![Build Status](https://ci.appveyor.com/api/projects/status/github/xbmc/audiodecoder.2sf?branch=Omega&svg=true)](https://ci.appveyor.com/project/xbmc/audiodecoder-2sf?branch=Omega) -->
 
 # audiodecoder.2sf addon for Kodi
 
