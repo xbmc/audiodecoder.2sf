@@ -1,6 +1,6 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -226,25 +226,3 @@ endif()
+@@ -190,25 +190,3 @@
  if(NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
      install(FILES ${ZLIB_PC} DESTINATION "${INSTALL_PKGCONFIG_DIR}")
  endif()
