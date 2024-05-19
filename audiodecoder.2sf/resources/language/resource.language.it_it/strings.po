@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KODI Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-08-16 02:03+0000\n"
+"PO-Revision-Date: 2024-04-14 10:01+0000\n"
 "Last-Translator: Massimo Pissarello <mapi68@gmail.com>\n"
 "Language-Team: Italian <https://kodi.weblate.cloud/projects/kodi-add-ons-audio-decodersencoders/audiodecoder-2sf/it_it/>\n"
 "Language: it_it\n"
@@ -15,15 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.13\n"
+"X-Generator: Weblate 5.4.3\n"
 
 msgctxt "Addon Summary"
 msgid "Nintendo DS audio file decoder"
-msgstr "Nintendo DS audio file decoder"
+msgstr "Decodificatore di file audio per Nintendo DS"
 
 msgctxt "Addon Description"
 msgid "To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
-msgstr "Per supportare il file audio di gioco utilizzato da alcuni giochi per Nintendo DS.[CR][CR]Il formato audio a doppio schermo è un formato audio basato su PSF. Memorizza l'audio estratto dalle ROM dei giochi per Nintendo DS. Le istruzioni musicali sono memorizzate in file con estensione .2sflib e la notazione musicale in file con estensione .mini2sf."
+msgstr "Supporta il file audio di gioco usato da alcuni giochi per Nintendo DS.[CR][CR]Il formato audio a doppio schermo è un formato audio basato su PSF. Memorizza l'audio estratto dalle ROM dei giochi per Nintendo DS. Le istruzioni musicali sono memorizzate in file con estensione .2sflib e la notazione musicale in file con estensione .mini2sf."
 
 # [Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
 # [Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
@@ -102,7 +102,7 @@ msgstr "Qualità ricampionamento usata sull'elaborazione."
 
 msgctxt "#30017"
 msgid "Zero order hold"
-msgstr "Zero order hold"
+msgstr "Sospensione dell'ordine zero"
 
 msgctxt "#30018"
 msgid "Blep synthesis"
