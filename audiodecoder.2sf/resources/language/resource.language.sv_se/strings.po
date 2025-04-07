@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: KODI Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-12-12 07:36+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
+"PO-Revision-Date: 2025-04-07 16:57+0000\n"
+"Last-Translator: Daniel Nylander <daniel@danielnylander.se>\n"
 "Language-Team: Swedish <https://kodi.weblate.cloud/projects/kodi-add-ons-audio-decodersencoders/audiodecoder-2sf/sv_se/>\n"
 "Language: sv_se\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 msgctxt "Addon Summary"
 msgid "Nintendo DS audio file decoder"
@@ -23,7 +23,7 @@ msgstr "Ljudfilsavkodare för Nintendo DS"
 
 msgctxt "Addon Description"
 msgid "To support game audio file used by some Nintendo DS games.[CR][CR]Dual Screen Sound Format is an audio format based on PSF. It stores audio ripped from the ROMs of Nintendo DS games. Music instructions are stored in files with a .2sflib extension and the music notation is stored in files with a .mini2sf extension."
-msgstr ""
+msgstr "För att stödja spelljudfiler som används av vissa Nintendo DS-spel.[CR][CR]Dual Screen Sound Format är ett ljudformat baserat på PSF. Det lagrar ljud som hämtats från ROM:en i Nintendo DS-spel. Musikinstruktionerna lagras i filer med filnamnstillägget .2sflib och musiknotationen lagras i filer med filnamnstillägget .mini2sf."
 
 # [Consistency] Make terms, settings names, brands and other minutiae, consistent throughout file.
 # [Capitalization] Avoid capitalizing every second word. See http://grammarist.com/capitalization/
@@ -38,88 +38,88 @@ msgstr "Standardlängd"
 
 msgctxt "#30001"
 msgid "Used if specified file does not provide the length."
-msgstr ""
+msgstr "Används om den angivna filen inte innehåller någon längd."
 
 msgctxt "#30002"
 msgid "unused"
-msgstr ""
+msgstr "oanvänd"
 
 msgctxt "#30003"
 msgid "{0:d} s"
-msgstr ""
+msgstr "{0:d} s"
 
 msgctxt "#30004"
 msgid "Default fade out time"
-msgstr ""
+msgstr "Standardtid för uttoning"
 
 msgctxt "#30005"
 msgid "Used if specified file does not provide the length and fade."
-msgstr ""
+msgstr "Används om den angivna filen inte innehåller längd och uttoning."
 
 msgctxt "#30006"
 msgid "unused"
-msgstr ""
+msgstr "oanvänd"
 
 msgctxt "#30007"
 msgid "{0:d} ms"
-msgstr ""
+msgstr "{0:d} ms"
 
 msgctxt "#30008"
 msgid "Suppress opening silence"
-msgstr ""
+msgstr "Ta bort tystnaden vid öppning"
 
 msgctxt "#30009"
 msgid "Some files start with silent data, this prevents it and looks for the beginning."
-msgstr ""
+msgstr "Vissa filer börjar med tysta data, detta förhindrar det och letar efter början."
 
 msgctxt "#30010"
 msgid "Suppress end silence"
-msgstr ""
+msgstr "Ta bort tystnaden i slutet"
 
 msgctxt "#30011"
 msgid "Some files end with silent data, this prevents it and looks for the end."
-msgstr ""
+msgstr "Vissa filer slutar med tysta data, detta förhindrar det och letar efter slutet."
 
 msgctxt "#30012"
 msgid "Second of silence to check"
-msgstr ""
+msgstr "Sekunder av tystnad att kontrollera"
 
 msgctxt "#30013"
 msgid "How many silent seconds are allowed before playback is stopped."
-msgstr ""
+msgstr "Hur många tysta sekunder som tillåts innan uppspelningen stoppas."
 
 msgctxt "#30014"
 msgid "{0:d} s"
-msgstr ""
+msgstr "{0:d} s"
 
 msgctxt "#30015"
 msgid "Resampling mode"
-msgstr ""
+msgstr "Omsamplingsläge"
 
 msgctxt "#30016"
 msgid "Used resampling quality about processing."
-msgstr ""
+msgstr "Använd omsamplingskvalitet vid bearbetning."
 
 msgctxt "#30017"
 msgid "Zero order hold"
-msgstr ""
+msgstr "Håll för nollorder"
 
 msgctxt "#30018"
 msgid "Blep synthesis"
-msgstr ""
+msgstr "Blep-syntes"
 
 msgctxt "#30019"
 msgid "Linear"
-msgstr ""
+msgstr "Linjär"
 
 msgctxt "#30020"
 msgid "Blam synthesis"
-msgstr ""
+msgstr "Blam-syntes"
 
 msgctxt "#30021"
 msgid "Cubic"
-msgstr ""
+msgstr "Kubisk"
 
 msgctxt "#30022"
 msgid "Ainc"
-msgstr ""
+msgstr "Ainc"
