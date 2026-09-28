@@ -1,1 +1,1 @@
-zlib https://github.com/madler/zlib/releases/download/v1.3/zlib-1.3.tar.xz
+zlib https://github.com/madler/zlib/releases/download/v1.3.2/zlib-1.3.2.tar.xz
